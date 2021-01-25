@@ -69,7 +69,7 @@ echo -e "$green Showing databases..."
 mysql -e "show databases;"
 sleep 3
 echo -e "$reset Creating new user without password :$red admin $reset"
-mysql -e "CREATE USER ‘admin’@localhost IDENTIFIED BY ‘’;"
+mysql -e "CREATE USER 'admin'@localhost IDENTIFIED BY '';"
 echo "User successfully created!"
 echo -e "$cyan Showing users..."
 sleep 1
@@ -77,7 +77,7 @@ mysql -e "SELECT User FROM mysql.user;"
 sleep 3
 echo -e "Granting ALL privileges on dvwa to admin $reset"
 mysql -e "GRANT ALL PRIVILEGES ON dvwa.* TO 'admin'@localhost;"
-sleep 2
+sleep 3
 mysql -e "FLUSH PRIVILEGES;"
 echo -e "$green MySQL server configuration completed! $reset"
 echo
@@ -107,19 +107,21 @@ sleep 2
 mv /data/data/com.termux/files/usr/etc/apache2/httpd.conf /data/data/com.termux/files/usr/etc/apache2/httpd.conf.bak
 cp httpd.conf /data/data/com.termux/files/usr/etc/apache2/
 cp -r DVWA/ /data/data/com.termux/files/usr/share/apache2/default-site/htdocs/dvwa
-curl -LO https://ryuk0x01.github.io/files/vulnmux/vulnmux.php
-cp vulnmux.php /data/data/com.termux/files/usr/share/apache2/default-site/htdocs/
 chmod 777 /data/data/com.termux/files/usr/share/apache2/default-site/htdocs/dvwa
 curl -LO https://ryuk0x01.github.io/files/vulnmux/vulnmux
 echo -e "Setting up $red Vulnmux $reset in /usr/bin"
-cp vulnmux /data/data/com.termux/usr/bin/
-chmod +x /data/data/com.termux/usr/bin/vulnmux
+cp vulnmux /data/data/com.termux/files/usr/bin/
+chmod +x /data/data/com.termux/files/usr/bin/vulnmux
 echo
 if [ -d /data/data/com.termux/files/usr/share/apache2/default-site/htdocs/dvwa ]
 then
 	echo -e "$green DVWA $reset configured..."
 	sleep 2
-	rm -rf ../Vulnmux
+	echo "Clearing setup files..."
+	rm -rf DVWA
+	rm vulnmux
+	rm httpd.conf
+	rm config.inc.php
 	sleep 2
 fi
 echo -e "$green Setup finished! $reset"
@@ -129,9 +131,10 @@ apachectl
 sleep 2
 echo -e "$red Apache server $green running!!$reset"
 echo
+echo -e "Type $red vulnmux$reset in terminal to use."
+sleep 3
 echo
 echo -e "$green Launching browser...$reset"
 sleep 3
-exec am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main -d "http://localhost:8080/vulnmux.php" >/dev/null
-clear
+exec am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main -d "http://localhost:8080/dvwa/setup.php" >/dev/null
 exit
