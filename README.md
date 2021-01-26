@@ -25,6 +25,12 @@ Change directory and run the script.
 
 >./setup.sh
 
+after finishing it will launch DVWA in chrome browser.
+do clear/reset database and login with credentials `admin:password`
+
+Type this command in termux to use Vulnmux
+>vulnmux
+
 If it shows permission denied, then give it executable permissions and run again.
 
 >chmod 755 script.sh
