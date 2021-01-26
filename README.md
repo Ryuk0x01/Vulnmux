@@ -1,6 +1,6 @@
 ![Vulnmux logo](https://ryuk0x01.github.io/files/vulnmux/images/logo.png)
 
-#Installation
+# Installation
 
 Open termux and update source list.
 
@@ -25,8 +25,8 @@ If it shows permission denied, then give it executable permissions and run again
 >chmod 755 script.sh
 
 
-##bWAPP will be added soon!
+## bWAPP will be added soon!
 
 
-##Author
-###Ryuk (Rishi Choudhary)
+## Author
+### Ryuk (Rishi Choudhary)
