@@ -23,7 +23,7 @@ Change directory and run the script.
 If it shows permission denied, then give it executable permissions and run again.
 
 >chmod 755 script.sh
-
+[Video tutorial](https://youtu.be/_PsErc36CmI)
 
 ## bWAPP will be added soon!
 
