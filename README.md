@@ -1,4 +1,4 @@
-![Vulnmux logo](https://ryuk0x01.github.io/files/vulnmux/images/logo.png)
+![Vulnmux logo](https://files.ryuk.tech/files/vulnmux/images/logo.png)
 
 # About
 Install and use DVWA vulnerable web application,
