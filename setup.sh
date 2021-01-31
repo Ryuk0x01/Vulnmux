@@ -94,8 +94,8 @@ then
 fi
 echo -e "Downloading configurations file for $red apache...$reset"
 echo
-curl -LO https://ryuk0x01.github.io/files/vulnmux/httpd.conf
-curl -LO https://ryuk0x01.github.io/files/vulnmux/config.inc.php
+curl -LO https://files.ryuk.tech/vulnmux/httpd.conf
+curl -LO https://files.ryuk.tech/vulnmux/config.inc.php
 echo -e "Configuring $green DVWA...$reset"
 sleep 2
 cp config.inc.php DVWA/config/
@@ -108,7 +108,7 @@ mv /data/data/com.termux/files/usr/etc/apache2/httpd.conf /data/data/com.termux/
 cp httpd.conf /data/data/com.termux/files/usr/etc/apache2/
 cp -r DVWA/ /data/data/com.termux/files/usr/share/apache2/default-site/htdocs/dvwa
 chmod 777 /data/data/com.termux/files/usr/share/apache2/default-site/htdocs/dvwa
-curl -LO https://ryuk0x01.github.io/files/vulnmux/vulnmux
+curl -LO https://files.ryuk.tech/vulnmux/vulnmux
 echo -e "Setting up $red Vulnmux $reset in /usr/bin"
 cp vulnmux /data/data/com.termux/files/usr/bin/
 chmod +x /data/data/com.termux/files/usr/bin/vulnmux
