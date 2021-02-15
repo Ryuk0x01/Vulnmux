@@ -1,4 +1,9 @@
-![Vulnmux logo](https://ryuk0x01.github.io/files/vulnmux/images/logo.png)
+![Vulnmux logo](https://files.ryuk.tech/vulnmux/images/logo.png)
+
+# About
+Install and use DVWA vulnerable web application,
+on android.
+
 
 # Installation
 
@@ -20,10 +25,17 @@ Change directory and run the script.
 
 >./setup.sh
 
+after finishing it will launch DVWA in chrome browser.
+do clear/reset database and login with credentials `admin:password`
+
+Type this command in termux to use Vulnmux
+>vulnmux
+
 If it shows permission denied, then give it executable permissions and run again.
 
 >chmod 755 script.sh
 
+[Video tutorial](https://youtu.be/_PsErc36CmI)
 
 ## bWAPP will be added soon!
 
