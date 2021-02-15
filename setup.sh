@@ -137,4 +137,4 @@ echo
 echo -e "$green Launching browser...$reset"
 sleep 3
 exec am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main -d "http://localhost:8080/dvwa/setup.php" >/dev/null
-exit
+exit 0
